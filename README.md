@@ -22,27 +22,7 @@ public abstract class AbstractTeaBuilder {
 }
 ```
 # 二、具体茶叶建造者
-    ```java
-  public class BlackTeaBuilder extends AbstractTeaBuilder   {
-
-    BlackTeaModel blackTeaModel = new BlackTeaModel();
-
-    @Override
-    public void setSequence(ArrayList<String> sequence) {
-        this.blackTeaModel.setSequence(sequence);
-    }
-
-    @Override
-    public TeaModel getTeaModel() {
-        return this.blackTeaModel;
-    }
-}
-```
-# 三、具体茶叶建造者
 ```java
-/**
-* 红茶制造者
-*/
 public class BlackTeaBuilder extends AbstractTeaBuilder   {
 
     BlackTeaModel blackTeaModel = new BlackTeaModel();
@@ -58,7 +38,27 @@ public class BlackTeaBuilder extends AbstractTeaBuilder   {
     }
 }
 ```
+# 三、具体茶叶建造者
+
+/**
+* 红茶制造者
+*/
 ```java
+public class BlackTeaBuilder extends AbstractTeaBuilder   {
+
+    BlackTeaModel blackTeaModel = new BlackTeaModel();
+
+    @Override
+    public void setSequence(ArrayList<String> sequence) {
+        this.blackTeaModel.setSequence(sequence);
+    }
+
+    @Override
+    public TeaModel getTeaModel() {
+        return this.blackTeaModel;
+    }
+}
+
 /**
 * 白茶制造者
 */
