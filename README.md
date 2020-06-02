@@ -7,6 +7,7 @@ A、建造者模式的优点
 *便于控制细节风险，对建造过程逐步细化
 
 # 一、抽象茶叶建造者
+```java
 public abstract class AbstractTeaBuilder {
     /**
      * 设置制茶顺序
@@ -19,7 +20,9 @@ public abstract class AbstractTeaBuilder {
      */
     public abstract TeaModel getTeaModel();
 }
+```
 # 二、具体茶叶建造者
+    ```java
   public class BlackTeaBuilder extends AbstractTeaBuilder   {
 
     BlackTeaModel blackTeaModel = new BlackTeaModel();
@@ -34,7 +37,9 @@ public abstract class AbstractTeaBuilder {
         return this.blackTeaModel;
     }
 }
+```
 # 三、具体茶叶建造者
+```java
 /**
 * 红茶制造者
 */
@@ -52,6 +57,8 @@ public class BlackTeaBuilder extends AbstractTeaBuilder   {
         return this.blackTeaModel;
     }
 }
+```
+```java
 /**
 * 白茶制造者
 */
@@ -67,7 +74,9 @@ public class WhiteTeaBuilder extends AbstractTeaBuilder {
         return model;
     }
 }
+```
 # 四、抽象制茶模型
+```java
 public class AppConfigs   {
 
     /**
@@ -95,7 +104,9 @@ public class AppConfigs   {
      */
     public static final String SAVE = "save";
 }
+```
 # 五、红茶实现模型
+```java
 public class BlackTeaModel extends TeaModel {
 
     @Override
@@ -128,7 +139,9 @@ public class BlackTeaModel extends TeaModel {
         System.out.println("红茶：保存");
     }
 }
+```
 # 六、白茶实现模型
+```java
 public class WhiteTeaModel extends TeaModel {
 
     @Override
@@ -161,7 +174,9 @@ public class WhiteTeaModel extends TeaModel {
         System.out.println("白茶：保存");
     }
 }
+```
 # 七、制茶大师，给出专业的制茶工序
+```java
 public class TeaMakeDirector   {
 
     private ArrayList<String> sequence = new ArrayList<>();
@@ -195,6 +210,7 @@ public class TeaMakeDirector   {
         return (BlackTeaModel) this.blackTeaBuilder.getTeaModel();
     }
 }
+```
 # 八、客户提需求，要 “两份红茶，三份白茶”
 ```java
 public class Client {
@@ -216,7 +232,7 @@ public class Client {
 }
 ```
 # 九、输入结果
-
+```java
 制作红茶
 红茶：采摘
 红茶：萎调
@@ -244,3 +260,4 @@ public class Client {
 白茶：萎调
 白茶：烘干
 白茶：保存
+```
