@@ -196,6 +196,7 @@ public class TeaMakeDirector   {
     }
 }
 # 八、客户提需求，要 “两份红茶，三份白茶”
+```java
 public class Client {
     public static void main(String[] args) {
         int blackNum = 2;
@@ -213,6 +214,7 @@ public class Client {
 
     }
 }
+```
 # 九、输入结果
 
 制作红茶
