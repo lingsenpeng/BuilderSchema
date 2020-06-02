@@ -6,7 +6,7 @@ A、建造者模式的优点
 *独立，容易扩展
 *便于控制细节风险，对建造过程逐步细化
 
-一、抽象茶叶建造者
+# 一、抽象茶叶建造者
 public abstract class AbstractTeaBuilder {
     /**
      * 设置制茶顺序
@@ -19,7 +19,7 @@ public abstract class AbstractTeaBuilder {
      */
     public abstract TeaModel getTeaModel();
 }
-二、具体茶叶建造者
+# 二、具体茶叶建造者
   public class BlackTeaBuilder extends AbstractTeaBuilder   {
 
     BlackTeaModel blackTeaModel = new BlackTeaModel();
@@ -34,7 +34,7 @@ public abstract class AbstractTeaBuilder {
         return this.blackTeaModel;
     }
 }
-三、具体茶叶建造者
+# 三、具体茶叶建造者
 /**
 * 红茶制造者
 */
@@ -67,7 +67,7 @@ public class WhiteTeaBuilder extends AbstractTeaBuilder {
         return model;
     }
 }
-四、抽象制茶模型
+# 四、抽象制茶模型
 public class AppConfigs   {
 
     /**
@@ -95,7 +95,7 @@ public class AppConfigs   {
      */
     public static final String SAVE = "save";
 }
-五、红茶实现模型
+# 五、红茶实现模型
 public class BlackTeaModel extends TeaModel {
 
     @Override
@@ -128,7 +128,7 @@ public class BlackTeaModel extends TeaModel {
         System.out.println("红茶：保存");
     }
 }
-六、白茶实现模型
+# 六、白茶实现模型
 public class WhiteTeaModel extends TeaModel {
 
     @Override
@@ -161,7 +161,7 @@ public class WhiteTeaModel extends TeaModel {
         System.out.println("白茶：保存");
     }
 }
-七、制茶大师，给出专业的制茶工序
+# 七、制茶大师，给出专业的制茶工序
 public class TeaMakeDirector   {
 
     private ArrayList<String> sequence = new ArrayList<>();
@@ -195,7 +195,7 @@ public class TeaMakeDirector   {
         return (BlackTeaModel) this.blackTeaBuilder.getTeaModel();
     }
 }
-六、客户提需求，要 “两份红茶，三份白茶”
+# 八、客户提需求，要 “两份红茶，三份白茶”
 public class Client {
     public static void main(String[] args) {
         int blackNum = 2;
@@ -213,7 +213,7 @@ public class Client {
 
     }
 }
-七、输入结果
+# 九、输入结果
 
 制作红茶
 红茶：采摘
